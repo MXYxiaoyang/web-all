@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!--
+    1.配置servlet类，并起一个别名
+    servlet-class 告诉tomcat对应的要实例化的servlet类
+    servlet-name 用于关联请求的映射路径
+    -->
+<!--    <servlet>-->
+<!--        &lt;!&ndash;给UserServlet起一个别名&ndash;&gt;-->
+<!--        <servlet-name>userServlet</servlet-name>-->
+<!--        <servlet-class>com.java.serlvet.UserServlet</servlet-class>-->
+<!--    </servlet>-->
+
+
+<!--    <servlet-mapping>-->
+<!--        &lt;!&ndash;关联别名和映射路径&ndash;&gt;-->
+<!--        <servlet-name>userServlet</servlet-name>-->
+<!--        &lt;!&ndash;可以为一个Servlet匹配多个不同的映射路径,但是不同的Servlet不能使用相同的url-pattern&ndash;&gt;-->
+<!--        <url-pattern>/userServlet</url-pattern>-->
+<!--        &lt;!&ndash; <url-pattern>/userServlet2</url-pattern>&ndash;&gt;-->
+<!--        &lt;!&ndash;-->
+<!--            /        表示通配所有资源,不包括jsp文件-->
+<!--            /*       表示通配所有资源,包括jsp文件-->
+<!--            /a/*     匹配所有以a前缀的映射路径-->
+<!--            *.action 匹配所有以action为后缀的映射路径-->
+<!--        &ndash;&gt;-->
+<!--        &lt;!&ndash; <url-pattern>/*</url-pattern>&ndash;&gt;-->
+<!--    </servlet-mapping>-->
+
+
+
+    <servlet>
+        <servlet-name>servletLifeCycle</servlet-name>
+        <servlet-class>com.java.serlvet.ServletLifeCycle</servlet-class>
+        <!--load-on-startup
+            如果配置的是正整数则表示容器在启动时就要实例化Servlet,
+            数字表示的是实例化的顺序
+        -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletLifeCycle</servlet-name>
+        <url-pattern>/servletLiftCycle</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+</web-app>
